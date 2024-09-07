@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resume Builder</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!--!------------------------ MAIN HEADINGS ----------------------------->
+
+    <div class="outer-div">
+      <h1>Better Resume</h1>
+      <h1 style="margin-top: -2px">Get hired faster</h1>
+      <div class="inner-div">
+        <!--!---------------------------- RESUME FORM STARTS HERE! ------------------------------->
+
+        <form action="app.js">
+          <!--!---------------------------- PERSONAL INFO ------------------------------->
+
+          <fieldset>
+            <legend>Personal Information</legend>
+            <p>
+              <strong>First Name:</strong>
+              <input type="text" name="first-name" id="first-name" required />
+            </p>
+            <p>
+              <strong>Last Name:</strong>
+              <input type="text" name="last-name" id="last-name" required />
+            </p>
+            <p>
+              <strong>Contact Number:</strong>
+              <input type="tel" name="contact" id="contact" required />
+            </p>
+            <p>
+              <strong>Email:</strong>
+              <input type="email" name="email" id="email" required />
+            </p>
+            <p>
+              <strong>Profile Photo:</strong>
+              <input type="file" name="photo" id="photo" />
+            </p>
+          </fieldset>
+
+          <!--!----------------------------EDUCATION------------------------------->
+
+          <fieldset>
+            <legend>Education</legend>
+            <p>
+              <strong>College Name:</strong>
+              <input type="text" name="school-name" id="school-name" required />
+            </p>
+            <p>
+              <strong>Select Degree:</strong>
+              <select name="degree" id="degree" required>
+                <option value="select">Select Degree</option>
+                <option value="highschool">High School Diploma</option>
+                <option value="associate">Associate's Degree</option>
+                <option value="bachelor-arts">Bachelor of Arts (BA)</option>
+                <option value="bachelor-science">Bachelor of Science (BSc)</option>
+                <option value="bachelor-engineering">Bachelor of Engineering (BEng)</option>
+                <option value="master-arts">Master of Arts (MA)</option>
+                <option value="master-science">Master of Science (MSc)</option>
+                <option value="master-business">Master of Business Administration (MBA)</option>
+                <option value="phd">Doctor of Philosophy (PhD)</option>
+                <option value="md">Doctor of Medicine (MD)</option>
+                <option value="jd">Juris Doctor (JD)</option>
+                <option value="diploma">Diploma</option>
+              </select>
+            </p>
+            <p>
+              <strong>Start Year:</strong>
+              <input type="date" name="start-year" id="start-year" required />
+              <strong>End Year:</strong>
+              <input type="date" name="end-year" id="end-year" required />
+            </p>
+            <p>
+              <strong>Certifications:</strong>
+              <textarea
+                name="Certifications"
+                id="Certifications"
+                cols="60"
+                rows="10"
+                placeholder="Describe about your Certificates...."
+                required
+              ></textarea>
+            </p>
+          </fieldset>
+
+          <!--!---------------------------- SKILLS SECTION ------------------------------->
+
+          <fieldset>
+            <legend>Skills</legend>
+            <p>
+              <strong>Select Skill:</strong>
+              <select name="select-skills" id="select-skills" required>
+                <option value="select">Select Skill</option>
+                <option value="communication">Communication</option>
+                <option value="teamwork">Teamwork</option>
+                <option value="leadership">Leadership</option>
+                <option value="problem-solving">Problem-Solving</option>
+                <option value="time-management">Time Management</option>
+                <option value="project-management">Project Management</option>
+                <option value="technical-skills">Technical Skills</option>
+                <option value="programming">Programming</option>
+                <option value="data-analysis">Data Analysis</option>
+                <option value="graphic-design">Graphic Design</option>
+                <option value="customer-service">Customer Service</option>
+                <option value="sales">Sales</option>
+                <option value="marketing">Marketing</option>
+                <option value="writing">Writing</option>
+                <option value="presentation-skills">Presentation Skills</option>
+                <option value="adaptability">Adaptability</option>
+                <option value="critical-thinking">Critical Thinking</option>
+                <option value="networking">Networking</option>
+                <option value="foreign-languages">Foreign Languages</option>
+                <option value="negotiation">Negotiation</option>
+                <option value="creativity">Creativity</option>
+                <option value="attention-to-detail">Attention to Detail</option>
+                <option value="emotional-intelligence">Emotional Intelligence</option>
+              </select>
+            </p>
+            <button
+              type="button"
+              id="toggle-skills-btn"
+              onclick="toggleSkills()">Hide Skills</button>
+
+            <div id="skills-section">
+            <textarea name="skills" id="skills" cols="60" rows="10" placeholder="Describe your skill..."required></textarea>
+            </div>
+          </fieldset>
+
+          <!--!----------------------------WORK EXPERIENCE SEC ------------------------------->
+
+          <fieldset>
+            <legend>Experience</legend>
+            <p>
+              <strong>Company Name:</strong>
+              <input type="text" name="company" id="company" required />
+              <strong>Year:</strong>
+              <input type="date" name="date" id="date" required />
+            </p>
+            <p>
+              <strong>Work Experience:</strong>
+            <textarea name="experience" id="experience" cols="60" rows="10" placeholder="Describe about your Experience...."required></textarea>
+            </p>
+          </fieldset>
+
+          <!--!---------------------------- LANGUAGES AND THEIR LEVELS ------------------------------->
+
+          <fieldset>
+            <legend>Languages</legend>
+            <p>
+              <strong>Basic Level:</strong>
+              <input type="text" name="lang" id="lang-basic" />
+            </p>
+            <p>
+              <strong>Intermediate Level:</strong>
+              <input type="text" name="lang" id="lang-intermediate" />
+            </p>
+            <p>
+              <strong>Pro Level:</strong>
+              <input type="text" name="lang" id="lang-pro" />
+            </p>
+          </fieldset>
+
+          <!--!----------------------------RESET RESUME------------------------------->
+
+          <input class="btn" type="reset" value="Reset Resume" />
+
+          <!--!---------------------------- GENERATE RESUME ------------------------------->
+
+          <input class="btn" type="submit" value="Generate Resume" />
+        </form>
+        <!-- form ends here! -->
+      </div>
+    </div>
+
+    <!--!----------------------------TYPESCRIPT FUNCTIONALITY ------------------------------->
+
+    <script src="app.js" defer></script>
+  </body>
+</html>
+
+<!--?--------------------------------- THE END !! ------------------------------>
